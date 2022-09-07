@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html layout:decorate="~{/user/user_layout}">
+    <div layout:fragment="content" >
+        <link rel="stylesheet" type="text/css" href="/css/user/signup.css">
+        <div style="margin: 20px;">
+            <h1><a href="/" class="logo">Rank2Movie</a></h1>
+        </div>
+
+        <!-- 메인 부분을 연주황으로 할까 생각 중-->
+        <div class="main" >
+            <div class="discription" >
+                <div style="font-size: 24px;">환영합니다. <b>Rank2Movie</b> 입니다.<br><br></div>
+                <div style="color: #c0c0c0">언제나 정확한 정보만을 전달하겠습니다.<br>
+                감사합니다.<br> </div>
+            </div>
+
+            <span class="grid signupBox item">
+                <label >ID  </label> <input id="id" type="text"><button onclick="idCheck()">중복확인</button>
+                <label>PW  </label> <input id="pw" type="password" class="colspan">
+                <label>rePW  </label> <input id="repw" type="password" class="colspan">
+                <label>NAME  </label> <input id="name" type="text" class="colspan">
+                <label>EMAIL  </label> <input id="email" type="text"><button onclick="emailAuth()">인증하기</button>
+
+            </span>
+            <div class="errorBox item">
+                <!--에러 메시지 출력-->
+
+            </div>
+
+            <button onclick="authCheck()" class="item btnOk">Rank2Movie 시작하기</button><br><Br>
+
+
+        </div>
+
+        <script src="/js/user/signup.js"></script>
+
+    </div>
+</html>

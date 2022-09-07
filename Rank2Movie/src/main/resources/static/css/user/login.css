@@ -1,0 +1,37 @@
+
+body{
+    background-color: #ececee;
+}
+
+.main{
+    min-height: 100%;
+    width: 45%;
+    border-style: none;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+.item{
+    height: 40px;
+}
+
+.loginBox{
+    margin: auto;
+    width: 60%;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.loginBtn{
+    background-color: #f89b00;
+    color: #FFFFFF;
+    border: none;
+    font-weight: bold;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 20px;
+}

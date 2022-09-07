@@ -1,0 +1,51 @@
+
+.main{
+    width: 30%;
+    min-height: 60%;
+    background-color : white;
+    margin: auto;
+    padding-bottom : 20px;
+
+    border: 1px solid #f89b00;
+}
+
+.signupBox{
+    margin: auto;
+    grid-template-columns: 20% 55% 25%;
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+
+}
+.item{
+    width: 70%;
+    margin: auto;
+}
+
+.colspan{
+    grid-column: 2 / span 2;
+}
+
+.discription{
+    min-height: 150px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.errorBox{
+    color: red;
+    //background-color: #edacb1 ;
+    min-height: 100px;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.btnOk{
+    background-color: #f89b00;
+    color: #FFFFFF;
+    border: none;
+    font-weight: bold;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 3px;
+}

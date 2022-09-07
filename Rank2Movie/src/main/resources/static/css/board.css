@@ -1,0 +1,59 @@
+body {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.BoxWrapper {
+	width: 700px;
+}
+
+.titleBox {
+	display: flex;
+	flex-direction: row;
+	width: 700px;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	height: 30px;
+}
+
+.BoxTitle {
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.sortBox {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 7px;
+	font-size: 7px;
+	width: 100px;
+}
+
+.communityBox {
+	width: 700px;
+	display: flex;
+	flex-direction: row;
+	margin: 15px 0px;
+}
+
+.communityImage {
+	background-color: aquamarine;
+	margin-right: 20px;
+	width: 100px;
+	height: 60px;
+}
+
+.communityTitle {
+	width: 500px;
+}
+
+.communityText {
+	font-size: 1px;
+	width: 580px;
+	height: 30px;
+	color: gray;
+	overflow: hidden;
+}

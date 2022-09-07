@@ -1,0 +1,70 @@
+body{
+    background-color: #ececee;
+}
+
+.main{
+    margin: auto;
+    width: min-content;
+}
+
+.rankingBox{
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    grid-template-rows: repeat(4, 400px);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+.item{
+    width: 200px;
+    height: 380px;
+}
+
+.link_txt{
+    margin-top: 5px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+}
+
+.link_txt:hover{
+    text-decoration: underline;
+}
+
+.info_txt{
+    font-size: 13px;
+    min-width: 100%;
+}
+
+.txt_grade{
+    padding-left: 3px;
+    color: #e92130;
+}
+
+.txt_num{
+    padding-left: 5px;
+}
+
+.txt_others{
+
+    color: #98989C;
+}
+
+.poster{
+    height:300px;
+    width:200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.ranking_num{
+    z-index:1;
+    position: absolute;
+    font-size: 32px;
+    color: #FFF;
+    font-style: italic;
+    margin: 10px;
+    /*top: 5px;
+    left: 13px;*/
+}

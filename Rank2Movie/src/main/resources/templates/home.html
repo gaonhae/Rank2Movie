@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+
+<a sec:authorize="isAuthenticated()" href="/user/logout">로그아웃</a>
+<a sec:authorize="isAuthenticated()" sec:authentication="name"></a>
+
+<a sec:authorize="isAnonymous()"  href="/user/signup">회원가입</a>
+<a sec:authorize="isAnonymous()" href="/user/login">로그인</a>
+<a href="/ranking">랭킹</a>
+
+<br>
+이메일 입력
+<input id="mail" type="text"> <button onclick="mailSend()">보내기</button>
+
+<script>
+
+    function mailSend()
+    {
+
+        $.ajax({
+            url : "/mail",
+            data : {"address" : $("#mail").val()},
+            method : "POST",
+            success : message => alert(message),
+            error : e => $("body").html(e.responseText)
+        });
+
+    }
+
+</script>
+
+</body>
+</html>

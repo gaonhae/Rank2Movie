@@ -1,0 +1,59 @@
+body{
+    margin: 0px;
+}
+
+.logoWrapper{
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 900;
+    color: orange;
+}
+
+.userCtrWrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.userCtr{
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.menuBtnWrapper{
+    border-top: solid 1px #d4d4d4;
+}
+
+.menuBtnBox{
+    margin: auto;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menuBtn{
+    text-decoration: none;
+    color: #98989C;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+footer{
+    height: 200px;
+    width: 100vw;
+    background-color: darkslategrey;
+}

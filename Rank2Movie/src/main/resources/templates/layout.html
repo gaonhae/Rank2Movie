@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+  <!-- sbb CSS -->
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+  <title>Rank2Movie</title>
+</head>
+<body>
+
+<!--네비바 구현 시작-->
+<nav>
+
+  <div class="logoWrapper">
+    <a class="logo" href="/">Rank2Movie</a>
+    <ul>
+      <li class="userCtrWrapper">
+        <a class="userCtr" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+        <a class="userCtr" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+        <a class="userCtr" th:href="@{/user/signup}">회원가입</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="menuBtnWrapper">
+    <div class="menuBtnBox">
+      <a class="menuBtn" href="/">홈</a>
+      <a class="menuBtn" href="/">랭킹</a>
+      <a class="menuBtn" href="/">게시판</a>
+      <a class="menuBtn" href="/">채팅</a>
+    </div>
+  </div>
+
+</nav>
+<!--네비바 구현 종료-->
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+<th:block layout:fragment="content"></th:block>
+<!-- 기본 템플릿 안에 삽입될 내용 End -->
+<!-- Bootstrap JS -->
+<script th:src="@{/bootstrap.min.js}"></script>
+<!-- 자바스크립트 Start -->
+<th:block layout:fragment="script"></th:block>
+<!-- 자바스크립트 End -->
+<!-- 푸터 구현 시작-->
+<footer>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+
+<div id="reputationBox">
+    <label>positive</label>
+    <button id="userPositive" style="background : white;" onclick="repute(getNo(), 1);">20</button>
+    <br>
+    <label>negative</label>
+    <button id="userNegative" style="background : white;" onclick="repute(getNo(), -1);">20</button>
+</div>
+<br><br><br>
+<label id="owner"></label><br>
+NAME : <input type="text" id="name" disabled><br>
+ID :  <input type="text" id="id"  disabled><br>
+<div id="pwBox">PW :  <input type="password" id="pw"  ><br></div>
+INTRODUCE : <br>
+<textarea id="detail" disabled>
+
+</textarea>
+
+<div id="dangerBox">
+    <button id="update" onclick="update()">수정</button>
+    <button id="delete" onclick="remove()">탈퇴하기</button>
+    <button id="cancel" onclick="cancel()">취소</button>
+</div>
+
+<script src="/js/user/detail.js"></script>
+<script src="/js/user/reputation.js"></script>
+<script>
+    $("#cancel").hide();
+    getDetail();
+    getUserReputation(getNo());
+</script>
+
+</body>
+</html>

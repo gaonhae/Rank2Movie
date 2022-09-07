@@ -1,0 +1,21 @@
+
+html,body{
+    margin: 0;
+    height: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+}
+
+.flex{
+    display: flex;
+
+}
+
+.logo{
+    text-decoration: none;
+    color: #f89b00;
+    font-family: Gothic;
+}

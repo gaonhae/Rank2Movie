@@ -1,0 +1,58 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.session:spring-session-core'
+    compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security' // 스프링 시큐리티
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // 타임리프
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'   // 타임리프 인증 객체
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'		// 타임리프 레이아웃
+
+	implementation 'org.springframework.boot:spring-boot-starter-validation' // 스프링 유효성 검사
+	implementation group: 'org.json', name: 'json', version: '20220320' // JSON 라이브러리
+
+	//API 사용을 위한 라이브러리 jar 임포트
+	implementation files('lib/kobis-opcl-rest-v1.0.jar')
+	//JSON library to handling json file
+	implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+	implementation 'org.springframework.boot:spring-boot-starter-mail' // Java Email sender
+	implementation 'commons-validator:commons-validator:1.4.1' // Email validator
+
+	//	test환경에서 lombok 사용을 위한 임포트
+	testCompileOnly 'org.projectlombok:lombok' // 테스트 의존성 추가
+	testAnnotationProcessor 'org.projectlombok:lombok' // 테스트 의존성 추가
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
