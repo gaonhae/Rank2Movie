@@ -1,6 +1,8 @@
 package code.Controller;
 
 
+import code.Domain.Movie.MovieEntity;
+import code.Domain.Movie.MovieRepository;
 import code.KobisAPI;
 import code.NaverAPI;
 import code.Service.MovieService;
@@ -18,12 +20,13 @@ import javax.servlet.http.HttpServletResponse;
 public class MovieController {
 
     private final MovieService movieService;
+    private final MovieRepository movieRepository;
     private final KobisAPI kobis;
 
     @RequestMapping(value = "/{movieCd}", produces = "application/text; charset=UTF-8")
     public String movie(HttpServletResponse response, @PathVariable("movieCd") String movieCd){
         movieService.showMovie(response, movieCd);
-        return "movie/list";
+        return "movie/detail";
     }
 
     @RequestMapping(value = "/movieAPI/{page}", produces = "application/text; charset=UTF-8")
@@ -42,4 +45,26 @@ public class MovieController {
     public String test(){
         return "movie/list";
     }
+
+
+    @RequestMapping(value = "/{movieCd}/rating")
+    public String getRate( @PathVariable("movieCd") String movieCd, HttpServletResponse response){
+        MovieEntity movieEntity = this.movieRepository.findByMovieCd(movieCd);
+        try {
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("application/json");
+            response.getWriter().println(movieService.getMovieRatingAvr(movieEntity));
+        } catch (Exception err) {
+            err.printStackTrace();
+        }
+        return "movie/detail";
+    }
+
+    @RequestMapping(value = "/{movieCd}/{rating}")
+    public String rate( @PathVariable("movieCd") String movieCd, @PathVariable("rating") String rating, HttpServletResponse response){
+        MovieEntity movieEntity = this.movieRepository.findByMovieCd(movieCd);
+        movieService.setMovieRating(movieEntity, Integer.parseInt(rating));
+        return "movie/detail";
+    }
+
 }

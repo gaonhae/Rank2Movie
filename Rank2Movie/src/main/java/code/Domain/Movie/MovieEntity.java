@@ -3,12 +3,14 @@ package code.Domain.Movie;
 
 import code.Domain.MovieDetail.MovieDetailEntity;
 import code.Domain.movieRank.MovieRankEntity;
+import code.Domain.movieRating.MovieRatingEntity;
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="movieTable")
@@ -43,11 +45,8 @@ public class MovieEntity {
 //    제작국가
     private String repNationNm;
 //    조회수
-//    private Integer views = 0;
     private Integer views = (int) Math.floor(Math.random() * 1000000);
-//    평점
-//    private Double rating = 0.0;
-    private Double rating = Double.parseDouble(String.format("%.1f",Math.random() * 5));
+
 //    영화상세정보
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "movieDetailEntity_id")
@@ -57,6 +56,15 @@ public class MovieEntity {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "movieRankEntity_id")
     private MovieRankEntity movieRankEntity;
+
+//    영화평점리스트
+    @OneToMany(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "movieRatingEntity_id")
+    private List<MovieRatingEntity> movieRatingEntityList;
+
+
+//    영화평균평점
+    private Double MovieRating;
 
 }
 

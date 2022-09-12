@@ -115,6 +115,8 @@ public class KobisAPI {
 
 
 
+
+
     //일별 박스오피스 데이터 가져오기
     public void getDailyMovie() {
         try {

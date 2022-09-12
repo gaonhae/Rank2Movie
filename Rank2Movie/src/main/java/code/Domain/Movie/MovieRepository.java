@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<MovieEntity, Long> {
     MovieEntity findByMovieCd(String movieCd);
-    List<MovieEntity> findAllByRating(Double rating, Sort sort);
+    List<MovieEntity> findAllByMovieRating(Double MovieRating, Sort sort);
 }
